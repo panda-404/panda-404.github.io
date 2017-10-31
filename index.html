@@ -9,6 +9,7 @@
   <title>Root</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="关于前端相关知识的个人总结">
+<meta name="keywords" content="前端,jquery,css,html,html5,css3,js">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Root">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -34,6 +35,16 @@
   
 
   
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?98f24d36bba85031505540a2f96b05e1";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
 </head>
 
@@ -46,7 +57,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/images/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="">panda-404</a></h1>
@@ -68,8 +79,6 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -104,7 +113,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/images/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">panda-404</h1>
@@ -177,7 +186,7 @@
       
         <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。<br>
         
-          <a class="article-more-a" href="/2017/10/30/CSS简介/#more">more >></a>
+          <a class="article-more-a" href="/2017/10/30/CSS简介/#more">展开全文 >></a>
         
       
 
@@ -199,10 +208,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/30/CSS简介/">展开全文 >></a>
-        </p>
       
 
       
@@ -257,7 +262,7 @@
 <p><em>但是现在通用HTML5的文档声明模式</em><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">!DOCUTYPE</span> <span class="attr">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>前几种因为标记语言基于SGML，故需要引入文档类型声明DTD，HTML5没有基于SGML，所以文档声明大大简化了<br>
         
-          <a class="article-more-a" href="/2017/10/30/HTML标签简介/#more">more >></a>
+          <a class="article-more-a" href="/2017/10/30/HTML标签简介/#more">展开全文 >></a>
         
       
 
@@ -279,10 +284,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/30/HTML标签简介/">展开全文 >></a>
-        </p>
       
 
       
@@ -337,7 +338,7 @@
 <p><strong>XML</strong>：Extensible Markup Language可拓展标记语言，用来叙述数据和结构，没有固定标签集，没有语法规则，仅有句法规则（例如标签需要成对）</p>
 <p><strong>XHTML</strong>：Extensible Hypertext Markup Language，可拓展超文本标记语言。<br>因为html书写不规范，在一些设备上容易造成显示问题，出现了严格纯净的html版本，格式与html4.0相似。是HTML和XML的结合<br>
         
-          <a class="article-more-a" href="/2017/10/30/关于前端/#more">more >></a>
+          <a class="article-more-a" href="/2017/10/30/关于前端/#more">展开全文 >></a>
         
       
 
@@ -363,10 +364,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/30/关于前端/">展开全文 >></a>
-        </p>
       
 
       
@@ -422,11 +419,11 @@
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false,
+		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -446,8 +443,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
       
     
       
-      
-      
     
       
       
@@ -459,15 +454,13 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -539,43 +532,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">目前正在努力打怪升级&lt;br&gt;力求做一名合格的前端工程师的小菜鸡&lt;br&gt;&lt;br&gt;开通博客记录自己所学所得&lt;br&gt;提升归纳总结能力&lt;br&gt;加油吧！！！</div>
   	  	
     	</section>
     
