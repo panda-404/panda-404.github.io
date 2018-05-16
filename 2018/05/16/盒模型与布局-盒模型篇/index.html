@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CSS简介 | Root的博客</title>
+  <title>盒模型与布局--盒模型篇 | Root的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.简介CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。">
-<meta name="keywords" content="css">
+  <meta name="description" content="我发现一点一滴的记录似乎对我没有多大意义，莫不如直接看文档，所以索性挑些我遇到的一些重点谈谈。 盒模型html中引入了一个形象的模型–盒模型，来描述html中的元素，不过在说盒模型前，得再次谈谈html中的三种元素类型：block,inline,inline-block。可通过display属性切换，该属性了解以下值： 1display: inline|block|inline-block|tab">
+<meta name="keywords" content="前端,jquery,css,html,html5,css3,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS简介">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/CSS简介/index.html">
+<meta property="og:title" content="盒模型与布局--盒模型篇">
+<meta property="og:url" content="http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/index.html">
 <meta property="og:site_name" content="Root的博客">
-<meta property="og:description" content="1.简介CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。">
+<meta property="og:description" content="我发现一点一滴的记录似乎对我没有多大意义，莫不如直接看文档，所以索性挑些我遇到的一些重点谈谈。 盒模型html中引入了一个形象的模型–盒模型，来描述html中的元素，不过在说盒模型前，得再次谈谈html中的三种元素类型：block,inline,inline-block。可通过display属性切换，该属性了解以下值： 1display: inline|block|inline-block|tab">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T02:36:42.126Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/block.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/inline.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/inlinedemo.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/boxmodel.png">
+<meta property="og:updated_time" content="2018-05-16T04:16:25.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS简介">
-<meta name="twitter:description" content="1.简介CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。">
+<meta name="twitter:title" content="盒模型与布局--盒模型篇">
+<meta name="twitter:description" content="我发现一点一滴的记录似乎对我没有多大意义，莫不如直接看文档，所以索性挑些我遇到的一些重点谈谈。 盒模型html中引入了一个形象的模型–盒模型，来描述html中的元素，不过在说盒模型前，得再次谈谈html中的三种元素类型：block,inline,inline-block。可通过display属性切换，该属性了解以下值： 1display: inline|block|inline-block|tab">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/block.png">
   
     <link rel="alternative" href="/atom.xml" title="Root的博客" type="application/atom+xml">
   
@@ -169,64 +174,88 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS简介" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-盒模型与布局-盒模型篇" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS简介
+      盒模型与布局--盒模型篇
     </h1>
   
 
         
-        <a href="/2017/10/30/CSS简介/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
+        <a href="/2018/05/16/盒模型与布局-盒模型篇/" class="archive-article-date">
+  	<time datetime="2018-05-16T03:58:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。<br><a id="more"></a></p>
-<h2 id="2-CSS引入"><a href="#2-CSS引入" class="headerlink" title="2.CSS引入"></a>2.CSS引入</h2><p>一般CSS有三种引入页面的方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1. 页面级css</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;!--style的type属性规定了文件的数据类型(MIME)，</span><br><span class="line">这儿type只有唯一值text/css，现在可以忽略type属性，</span><br><span class="line">style标签的默认type类型为text/css--&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            height: 100px;</span><br><span class="line">            width: 100px;</span><br><span class="line">            background-color: red;</span><br><span class="line">        &#125;</span><br><span class="line">        @import url(CSS文件地址)</span><br><span class="line">        &lt;!--import方式引入的CSS文件里的代码--&gt;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">2. 以行间样式引入CSS</span><br><span class="line">&lt;div style=&quot;height: 100px;width: 100px;background-color: red;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">3. 引入外部CSS文件（推荐方法）</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;page.css&quot;&gt;</span><br><span class="line">    &lt;!--rel是引入文件与页面之间的关系，</span><br><span class="line">    stylesheet作为当前页面的样式表，</span><br><span class="line">    href是外部资源的地址--&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-选择器"><a href="#3-选择器" class="headerlink" title="3.选择器"></a>3.选择器</h2><p>CSS提供了多样的选择器使CSS样式与html结构匹配，有这样一个结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span> <span class="attr">id</span>=<span class="string">"only"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ul-list"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>one<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>two<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>three<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">em</span>&gt;</span>我在这儿<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">strong</span>&gt;</span>我也在这儿<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一行文本<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>下面就演示下CSS中的选择器。</p>
-<ol>
-<li><p>标签选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">em &#123;</span><br><span class="line">    color: green;  //我在这儿变为绿色</span><br><span class="line">&#125;</span><br><span class="line">div &#123;</span><br><span class="line">    border: 1px solid black; //页面中所有div增加1px边框</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>我发现一点一滴的记录似乎对我没有多大意义，莫不如直接看文档，所以索性挑些我遇到的一些重点谈谈。</p>
+<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>html中引入了一个形象的模型–盒模型，来描述html中的元素，不过在说盒模型前，得再次谈谈html中的三种元素类型：block,inline,inline-block。可通过<code>display</code>属性切换，该属性了解以下值：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: inline|block|inline-block|table|table-cell|grid|none|inherit;</span><br></pre></td></tr></table></figure>
+<h2 id="1-block"><a href="#1-block" class="headerlink" title="1. block"></a>1. block</h2><p>这是最灵活也是最常用的一种元素类型，典型代表<code>&lt;div&gt;</code>。特征：<br><a id="more"></a></p>
+<ul>
+<li>可以设置宽高内外边距，宽度默认是父元素100%</li>
+<li>元素独占一行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line"> height: 30px;</span><br><span class="line"> background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div&gt;我是块&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>class选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;</span><br><span class="line">    background-color: red; //类名为header的div背景色变为红色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>id选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#only &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;  //id为only的标签有500*500宽高</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通配符选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    margin: 0px;</span><br><span class="line">    padding: 0px;  //页面中所有标签去除内外边距</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>父子选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.header ul li &#123;  //选中类名为header的div下的ul的子元素li</span><br><span class="line">    background-color: blue; </span><br><span class="line">&#125;</span><br><span class="line">//父子选择器查找顺序，从子元素向父元素查找</span><br><span class="line">//先找到li，再筛选出父元素为ul的li，逐级向上查找</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>并列选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li.first &#123; //选中有类名first的li</span><br><span class="line">    background-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分组选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.header span em,</span><br><span class="line">.header span strong &#123; //同时选中div.header下span下的em和strong</span><br><span class="line">    color: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>伪类选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">为什么叫伪类呢？是因为这个选择器的效果和手动添加一个类名来选择，</span><br><span class="line">效果是一样的。</span><br><span class="line">a:hover &#123;</span><br><span class="line">    background-color: skyblue;</span><br><span class="line">&#125;</span><br><span class="line">//效果和在a标签上添加了一个class=&quot;hover&quot;的类是一样的</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+</ul>
+<p><img src="block.png" alt="block"></p>
 <blockquote>
-<p>CSS2.0大致就这七种选择器，CSS3.0又推出了属性选择器，伪元素选择器，条件选择器等</p>
+<p>注意四周留出的空白，这是body的默认样式margin: 8px;</p>
 </blockquote>
-<p>一般来说页面中当然不会只有这么点样式，那么当多个样式同时作用到同一元素时，怎么判断元素最后呈现的样式呢<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;width: 100px;height: 100px;&quot; class=&quot;demo&quot; id=&quot;test&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;!--css--&gt;</span><br><span class="line">div &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.demo &#123;</span><br><span class="line">    height: 300px;</span><br><span class="line">    width: 300px;</span><br><span class="line">&#125;</span><br><span class="line">#test &#123;</span><br><span class="line">    height: 400px;</span><br><span class="line">    width: 400px!important;</span><br><span class="line">&#125;</span><br><span class="line">//div最后宽400px高100px</span><br></pre></td></tr></table></figure></p>
-<p>之所以会这样，是因为引入了一个CSS权重的概念，权重值如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">!important  --  infinity</span><br><span class="line">行间样式  --  1000</span><br><span class="line">id选择器  --  100</span><br><span class="line">属性/class/伪类选择器  --  10</span><br><span class="line">标签/伪元素  --  1</span><br><span class="line">通配符  --  0</span><br><span class="line">//需要判断最终样式时，按照权重值大小判断，越大优先级越高</span><br><span class="line">//当权重值相同时，在样式表中后出现的样式会覆盖先出现的</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-CSS的一些属性"><a href="#4-CSS的一些属性" class="headerlink" title="4.CSS的一些属性"></a>4.CSS的一些属性</h2><p>CSS的属性按照功能可以分为字体文本、边框、背景、盒模型、颜色、定位布局、边距等方面的属性，只简单介绍几种，详细的可以参考手册或是上W3C index查找。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">font-famliy -- 字体，可以填写多个字体用于兼容</span><br><span class="line">font-size -- 字体大小，默认字体大小16px,网页一般12px</span><br><span class="line">color -- 字体颜色，有三种表示方法，颜色英文单词，十六进制表示，rgb(a)函数表示</span><br><span class="line">text-align -- 文本水平对齐方式</span><br><span class="line">text-indent -- 首行文字缩进</span><br><span class="line">text-decoration -- 文本装饰样式</span><br><span class="line">verticla-align -- 垂直对齐方式（基准线）</span><br><span class="line">letter-spacing -- 文字间隙</span><br><span class="line">word-spacing -- 单词间隙</span><br><span class="line">border -- 边框，这是一个复合属性，由三种属性复合</span><br><span class="line">border-width -- 边框宽度</span><br><span class="line">border-style -- 边框样式(solid,dotted,dashed)</span><br><span class="line">border-color -- 边框颜色</span><br><span class="line">border-left/right/top/bottom -- 单独设置某一边框</span><br><span class="line">background -- 背景，复合属性</span><br><span class="line">background-repeat -- 背景图片没全部填充时是否重复</span><br><span class="line">background-size -- 背景尺寸支持数字、百分比、cover、contain</span><br><span class="line">background-attachment -- 定义背景图随滚动条滚动方式</span><br><span class="line">background-clip -- 背景图片开始绘制区域</span><br><span class="line">display -- 元素展示形式</span><br><span class="line">list-style-type -- 列表元素样式</span><br><span class="line">list-style-position -- 列表标号位置，是在内容器区还是ul内边距区</span><br><span class="line">position -- 定位</span><br><span class="line">visibility -- 可见性</span><br><span class="line">overflow -- 溢出是否隐藏</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-inline"><a href="#2-inline" class="headerlink" title="2.inline"></a>2.inline</h2><p>代表：<code>&lt;span&gt;</code>，特征：</p>
+<ul>
+<li>不可以设置宽高,内外边距能否设置视情况而定</li>
+<li>内容决定了占据大小</li>
+<li>和其他元素在同一行排列<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">span&#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: green;</span><br><span class="line">&#125;</span><br><span class="line">&lt;span&gt;我是行级&lt;/span&gt;</span><br><span class="line">&lt;span&gt;我是行级&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="inline.png" alt="inline"><br>可以看到设置的宽高并没有生效，并且两个元素之间出现了间隙。之所以产生间隙，这也是行级元素的特性之一，拥有文本特性，即元素之间的空格、换行、tab会导致元素之间产生间隙，这个间隙是由父元素的<code>font-size</code>属性决定的。解决办法也有多种：</p>
+<ul>
+<li><p>最简单直接就是使元素之间没有空格，但是这些方法对于多个标签操作太麻烦了 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">使元素不换行</span><br><span class="line">- &lt;span&gt;我是行级&lt;/span&gt;&lt;span&gt;我是行级&lt;/span&gt;</span><br><span class="line">注释空格</span><br><span class="line">- &lt;span&gt;我是行级&lt;/span&gt;&lt;!--</span><br><span class="line">--&gt;&lt;span&gt;我是行级&lt;/span&gt;</span><br><span class="line">使用margin: -4px;</span><br><span class="line">- span&#123;</span><br><span class="line">  &lt;!-- ... --&gt;</span><br><span class="line">  margin: -4px; //取决于字体大小</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使父元素font-size: 0;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.spanparent &#123;</span><br><span class="line"> font-size: 0;</span><br><span class="line">&#125;</span><br><span class="line">.spanparent span &#123;</span><br><span class="line"> font-size: 14px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运用css属性letter-spacing或者word-spacing，不过还是得根据字体大小设定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.spanparent &#123;</span><br><span class="line"> letter-spacing: -4px;</span><br><span class="line"> /*word-spacing: -4px;*/</span><br><span class="line">&#125;</span><br><span class="line">.spanparent span &#123;</span><br><span class="line"> letter-spacing: 0;</span><br><span class="line"> /*word-spacing: 0;*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="再说边距的问题"><a href="#再说边距的问题" class="headerlink" title="再说边距的问题"></a>再说边距的问题</h3><p>html元素还可分为替换元素和非替换元素，行内元素能否设置边距就与这两者相关</p>
+<ul>
+<li>非替换元素：内容包含在标签中，如<code>&lt;span&gt;</code> <code>&lt;p&gt;</code></li>
+<li>替换元素：内容由外部引入，不在标签之中，如<code>&lt;img&gt;</code> <code>&lt;input&gt;</code><br>那么问题来了，前面为什么说行级元素能否设置内外边距视情况而定呢？这就是原因。<br>对于非替换元素，可以理解为只有水平方向上的边距是有作用的。<br>而对于替换元素，则可以像块级元素一样设置内外边距宽高。<br>看个例子，页面结构如下：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"span1"</span>&gt;</span>我是行级.span1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"span2"</span>&gt;</span>我是行级.span2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"这是个输入框"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>样式表<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line"> <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line"> <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.span1</span> &#123;</span><br><span class="line"> <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line"> <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line"> <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">30px</span>;</span><br><span class="line"> <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">30px</span>;</span><br><span class="line"> <span class="attribute">background</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line"> <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line"> <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line"> <span class="attribute">background</span>: yellow;</span><br><span class="line"> <span class="attribute">padding</span>: <span class="number">30px</span>;</span><br><span class="line"> <span class="attribute">margin</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.span2</span> &#123;</span><br><span class="line"> <span class="attribute">padding-top</span>: <span class="number">30px</span>;</span><br><span class="line"> <span class="attribute">background</span>: blue;</span><br><span class="line"> <span class="attribute">margin</span>: <span class="number">30px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line"> <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line"> <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果如图：<br><img src="inlinedemo.png" alt="demo"><br>可以看到.span1确实有左右margin和padding，且忽略的设置的宽高，可替换元素input能够像块级元素一样操作，但是等等，再看中间的.span2，这就是所谓的非替换元素设置垂直方向的边距失效，虽然视觉上有效果，但是.span2的上内边距并没有起到占位的作用，不会对其他元素造成影响（但是为什么要这么做还不太清楚）。总而言之，给非替换元素设置垂直方向边距是无效的。</p>
+<h2 id="3-inline-block"><a href="#3-inline-block" class="headerlink" title="3.inline-block"></a>3.inline-block</h2><p>这不是默认display属性的一种，但是可配置，使元素同时具有行级和块级的特性（说起来挺像行级替换元素）</p>
+<h2 id="4-其他"><a href="#4-其他" class="headerlink" title="4.其他"></a>4.其他</h2><p>其他类型的display属性值就不再详细介绍：<code>display: none</code>隐藏元素，<code>display: inherit</code>属性由父元素继承来，<code>display: table</code>搭配<code>display: table-cell</code>等可以做到类似css3中flex弹性盒子的效果。</p>
+<ul>
+<li>display: grid<br>这是一种类似table布局的新css属性，主要搭配如下几个属性实现网格布局：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">定义每行的高度，行间距</span><br><span class="line">grid-template-rows: rowheight1 rowmargin1 rowheight2 rowmargin2 rowheight3;</span><br><span class="line">定义每列宽度间距</span><br><span class="line">grid-template-columns: colwidth1 colmargin1 colwidth2 colmargin2 colwidth3;</span><br><span class="line">定义单元格位置</span><br><span class="line">grid-column: start/end;</span><br><span class="line">grid-row: start/end;</span><br><span class="line">或者以这种复合形式</span><br><span class="line">grid-area: rowstart/colstart/rowend/colend;</span><br></pre></td></tr></table></figure>
+<h1 id="盒模型从这儿开始"><a href="#盒模型从这儿开始" class="headerlink" title="盒模型从这儿开始"></a>盒模型从这儿开始</h1><p>上面介绍的是元素的类型，从这里开始正式的介绍我们的主角–盒模型（元素框）。盒模型是文档中用于布局的主要模型，可以理解为HTML元素的化身，描述了元素在文档中的大小及位置，我们以<code>&lt;div&gt;</code>为例。<br><img src="boxmodel.png" alt="boxmodel"><br>如图就是一个盒模型的结构，包含content,padding,border,margin四部分，对于有定位的元素还有position用于描述元素的位置。<br>盒模型又分为w3c标准盒模型以及IE盒模型，区别是对盒子宽高的定义</p>
+<ul>
+<li><p>w3c标准盒模型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">width = contentWidth</span><br><span class="line">height = contentHeight</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IE盒模型</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">height/width = content + padding + border</span><br></pre></td></tr></table></figure>
+<p>从以上公式可以看出区别，w3c标准盒模型中，设定的宽度为内容区宽度，而IE盒模型中，设置的宽度被内容区、内边距、边框共同占用。</p>
 <blockquote>
-<p>这里仅仅笼统提一下CSS2、3中的属性，CSS布局是前端领域的重难点，建议看看张鑫旭大神的各种奇技淫巧。</p>
+<p>文档声明头doctype规定了浏览器以w3c标准解释盒模型，若没有声明，则看浏览器厂商的心情了。可以设置box-sizing: border-box;按照IE盒模型解释，默认content-box，个人觉得IE盒模型似乎更好用些。。。</p>
+</blockquote>
+<h2 id="block-level-box-amp-inline-level-box"><a href="#block-level-box-amp-inline-level-box" class="headerlink" title="block-level-box&amp;inline-level-box"></a>block-level-box&amp;inline-level-box</h2><p>以上是盒模型的简介，众所周知，元素分为块级元素和行级元素，那么这两种元素是如何依据盒模型体现在布局渲染中的呢？这就引入了块级盒&amp;行级盒。一般块级元素会生成块级盒，行级元素生成行级盒。特性已经在上面<code>display: block|inline</code>描述过了。</p>
+<blockquote>
+<p>元素会根据display属性来决定以何种上下文规则渲染(BFC、IFC属于FC(Formatting Context)，是一套盒子的渲染方式，下一篇讲)，我对盒模型和格式化上下文的理解比较混乱，还得多学习啊！</p>
 </blockquote>
 
       
@@ -236,17 +265,6 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -297,7 +315,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/30/CSS简介/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +329,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/05/10/说明/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/16/初识DOM/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          说明
+          初识DOM
         
       </div>
     </a>
   
   
-    <a href="/2017/10/30/HTML标签简介/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML标签简介</div>
+    <a href="/2018/05/14/移动端滚动加载/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端滚动加载</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -377,7 +395,7 @@ var _hmt = _hmt || [];
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2017/10/30/CSS简介/",
+  id: "http://yoursite.com/2018/05/16/盒模型与布局-盒模型篇/",
   owner: 'zhangjunkunn',
   repo: 'zhangjunkunn.github.io',
   oauth: {

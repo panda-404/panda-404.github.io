@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CSS简介 | Root的博客</title>
+  <title>js类型判断 | Root的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.简介CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。">
-<meta name="keywords" content="css">
+  <meta name="description" content="js类型判断今天才想起来漏写了类型检测，现在补上。。。">
+<meta name="keywords" content="前端,jquery,css,html,html5,css3,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS简介">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/CSS简介/index.html">
+<meta property="og:title" content="js类型判断">
+<meta property="og:url" content="http://yoursite.com/2018/05/16/js类型判断/index.html">
 <meta property="og:site_name" content="Root的博客">
-<meta property="og:description" content="1.简介CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。">
+<meta property="og:description" content="js类型判断今天才想起来漏写了类型检测，现在补上。。。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T02:36:42.126Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/js类型判断/typeof.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/js类型判断/toString.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/js类型判断/toString1.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/js类型判断/consoleObj.png">
+<meta property="og:updated_time" content="2018-05-16T04:28:11.453Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS简介">
-<meta name="twitter:description" content="1.简介CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。">
+<meta name="twitter:title" content="js类型判断">
+<meta name="twitter:description" content="js类型判断今天才想起来漏写了类型检测，现在补上。。。">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/16/js类型判断/typeof.png">
   
     <link rel="alternative" href="/atom.xml" title="Root的博客" type="application/atom+xml">
   
@@ -169,64 +174,40 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS简介" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js类型判断" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS简介
+      js类型判断
     </h1>
   
 
         
-        <a href="/2017/10/30/CSS简介/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
+        <a href="/2018/05/16/js类型判断/" class="archive-article-date">
+  	<time datetime="2018-05-16T04:24:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。<br><a id="more"></a></p>
-<h2 id="2-CSS引入"><a href="#2-CSS引入" class="headerlink" title="2.CSS引入"></a>2.CSS引入</h2><p>一般CSS有三种引入页面的方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1. 页面级css</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;!--style的type属性规定了文件的数据类型(MIME)，</span><br><span class="line">这儿type只有唯一值text/css，现在可以忽略type属性，</span><br><span class="line">style标签的默认type类型为text/css--&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            height: 100px;</span><br><span class="line">            width: 100px;</span><br><span class="line">            background-color: red;</span><br><span class="line">        &#125;</span><br><span class="line">        @import url(CSS文件地址)</span><br><span class="line">        &lt;!--import方式引入的CSS文件里的代码--&gt;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">2. 以行间样式引入CSS</span><br><span class="line">&lt;div style=&quot;height: 100px;width: 100px;background-color: red;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">3. 引入外部CSS文件（推荐方法）</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;page.css&quot;&gt;</span><br><span class="line">    &lt;!--rel是引入文件与页面之间的关系，</span><br><span class="line">    stylesheet作为当前页面的样式表，</span><br><span class="line">    href是外部资源的地址--&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-选择器"><a href="#3-选择器" class="headerlink" title="3.选择器"></a>3.选择器</h2><p>CSS提供了多样的选择器使CSS样式与html结构匹配，有这样一个结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span> <span class="attr">id</span>=<span class="string">"only"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ul-list"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>one<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>two<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>three<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">em</span>&gt;</span>我在这儿<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">strong</span>&gt;</span>我也在这儿<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一行文本<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>下面就演示下CSS中的选择器。</p>
-<ol>
-<li><p>标签选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">em &#123;</span><br><span class="line">    color: green;  //我在这儿变为绿色</span><br><span class="line">&#125;</span><br><span class="line">div &#123;</span><br><span class="line">    border: 1px solid black; //页面中所有div增加1px边框</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>class选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;</span><br><span class="line">    background-color: red; //类名为header的div背景色变为红色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>id选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#only &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;  //id为only的标签有500*500宽高</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通配符选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    margin: 0px;</span><br><span class="line">    padding: 0px;  //页面中所有标签去除内外边距</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>父子选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.header ul li &#123;  //选中类名为header的div下的ul的子元素li</span><br><span class="line">    background-color: blue; </span><br><span class="line">&#125;</span><br><span class="line">//父子选择器查找顺序，从子元素向父元素查找</span><br><span class="line">//先找到li，再筛选出父元素为ul的li，逐级向上查找</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>并列选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li.first &#123; //选中有类名first的li</span><br><span class="line">    background-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分组选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.header span em,</span><br><span class="line">.header span strong &#123; //同时选中div.header下span下的em和strong</span><br><span class="line">    color: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>伪类选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">为什么叫伪类呢？是因为这个选择器的效果和手动添加一个类名来选择，</span><br><span class="line">效果是一样的。</span><br><span class="line">a:hover &#123;</span><br><span class="line">    background-color: skyblue;</span><br><span class="line">&#125;</span><br><span class="line">//效果和在a标签上添加了一个class=&quot;hover&quot;的类是一样的</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+        <h1 id="js类型判断"><a href="#js类型判断" class="headerlink" title="js类型判断"></a>js类型判断</h1><p>今天才想起来漏写了类型检测，现在补上。。。<br><a id="more"></a></p>
+<h1 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h1><p>在js中有6中数据类型：Number,String,Boolean,Null,Undefined,Object。有时候我们需要对值做类型检测，判断是原始值类型还是对象，是何种对象。这篇就总结下类型判断的常见方法。</p>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>这是类型判断最基础的方法，能判断出number,string,boolean,undefined,object,function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, &apos;1&apos;, false, null, undefined, &#123;num:1&#125;, [1], function()&#123;&#125;];</span><br><span class="line">console.log(arr)</span><br><span class="line">for(var i = 0, len = arr.length; i &lt; len; i ++) &#123;</span><br><span class="line"> console.log(typeof(arr[i]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="typeof.png" alt="类型检测"><br>可以看到用typeof检测时，将null也视为object，这是因为在以往null是用来给空对象占位的，但是在现在null意为这里不该有值。此外，虽然typeof能将function能将函数类型从object区分出来，但是比如日期对象、数组对象，typeof并不能区分。</p>
+<h2 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h2><p>通过Object.prototype.toString可以返回一个<code>[Object 类型]</code>字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, &apos;1&apos;, false, null, undefined, &#123;num:1&#125;, [1], function()&#123;&#125;];</span><br><span class="line">console.log(arr)</span><br><span class="line">for(var i = 0, len = arr.length; i &lt; len; i ++) &#123;</span><br><span class="line"> console.log(Object.prototype.toString.call(arr[i]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="toString.png" alt="类型检测"><br>可以自行试验一下，Object.prototype.toString可以判断几乎所有的数值与对象类型。<br>这里补充一下，直接调用toString方法会返回一个包含this指向的字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">console.log(toString(obj));</span><br><span class="line">console.log(window.toString(obj));</span><br><span class="line">console.log(toString.call(null, obj));</span><br><span class="line">console.log(toString(null));</span><br><span class="line">console.log(toString(undefined));</span><br></pre></td></tr></table></figure>
+<p><img src="toString1.png" alt="直接调用toString"></p>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof判断待检测值原型链上是否有对应构造函数的原型。这并不是一个完善的方法，因为对于原始值类型，并不存在原型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;,</span><br><span class="line"> arr = [];</span><br><span class="line">function fn() &#123;&#125;</span><br><span class="line">obj instanceof Object //true</span><br><span class="line">arr instanceof Array //true</span><br><span class="line">arr instanceof Object //true</span><br><span class="line">fn instanceof Function //true</span><br><span class="line">arr instanceof Function //false</span><br><span class="line">fn instanceof Object //true</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>CSS2.0大致就这七种选择器，CSS3.0又推出了属性选择器，伪元素选择器，条件选择器等</p>
-</blockquote>
-<p>一般来说页面中当然不会只有这么点样式，那么当多个样式同时作用到同一元素时，怎么判断元素最后呈现的样式呢<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;width: 100px;height: 100px;&quot; class=&quot;demo&quot; id=&quot;test&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;!--css--&gt;</span><br><span class="line">div &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.demo &#123;</span><br><span class="line">    height: 300px;</span><br><span class="line">    width: 300px;</span><br><span class="line">&#125;</span><br><span class="line">#test &#123;</span><br><span class="line">    height: 400px;</span><br><span class="line">    width: 400px!important;</span><br><span class="line">&#125;</span><br><span class="line">//div最后宽400px高100px</span><br></pre></td></tr></table></figure></p>
-<p>之所以会这样，是因为引入了一个CSS权重的概念，权重值如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">!important  --  infinity</span><br><span class="line">行间样式  --  1000</span><br><span class="line">id选择器  --  100</span><br><span class="line">属性/class/伪类选择器  --  10</span><br><span class="line">标签/伪元素  --  1</span><br><span class="line">通配符  --  0</span><br><span class="line">//需要判断最终样式时，按照权重值大小判断，越大优先级越高</span><br><span class="line">//当权重值相同时，在样式表中后出现的样式会覆盖先出现的</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-CSS的一些属性"><a href="#4-CSS的一些属性" class="headerlink" title="4.CSS的一些属性"></a>4.CSS的一些属性</h2><p>CSS的属性按照功能可以分为字体文本、边框、背景、盒模型、颜色、定位布局、边距等方面的属性，只简单介绍几种，详细的可以参考手册或是上W3C index查找。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">font-famliy -- 字体，可以填写多个字体用于兼容</span><br><span class="line">font-size -- 字体大小，默认字体大小16px,网页一般12px</span><br><span class="line">color -- 字体颜色，有三种表示方法，颜色英文单词，十六进制表示，rgb(a)函数表示</span><br><span class="line">text-align -- 文本水平对齐方式</span><br><span class="line">text-indent -- 首行文字缩进</span><br><span class="line">text-decoration -- 文本装饰样式</span><br><span class="line">verticla-align -- 垂直对齐方式（基准线）</span><br><span class="line">letter-spacing -- 文字间隙</span><br><span class="line">word-spacing -- 单词间隙</span><br><span class="line">border -- 边框，这是一个复合属性，由三种属性复合</span><br><span class="line">border-width -- 边框宽度</span><br><span class="line">border-style -- 边框样式(solid,dotted,dashed)</span><br><span class="line">border-color -- 边框颜色</span><br><span class="line">border-left/right/top/bottom -- 单独设置某一边框</span><br><span class="line">background -- 背景，复合属性</span><br><span class="line">background-repeat -- 背景图片没全部填充时是否重复</span><br><span class="line">background-size -- 背景尺寸支持数字、百分比、cover、contain</span><br><span class="line">background-attachment -- 定义背景图随滚动条滚动方式</span><br><span class="line">background-clip -- 背景图片开始绘制区域</span><br><span class="line">display -- 元素展示形式</span><br><span class="line">list-style-type -- 列表元素样式</span><br><span class="line">list-style-position -- 列表标号位置，是在内容器区还是ul内边距区</span><br><span class="line">position -- 定位</span><br><span class="line">visibility -- 可见性</span><br><span class="line">overflow -- 溢出是否隐藏</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>这里仅仅笼统提一下CSS2、3中的属性，CSS布局是前端领域的重难点，建议看看张鑫旭大神的各种奇技淫巧。</p>
+<p>在谷歌控制台中，貌似为声明的对象进行instanceof和算术运算会被转换成空，如下<br><img src="consoleObj.png" alt="控制台空对象"><br>原因虽然还不清楚，但是一般也不会直接在控制台进行操作。<br>本篇完。</p>
 </blockquote>
 
       
@@ -236,17 +217,6 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -297,7 +267,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/30/CSS简介/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/16/js类型判断/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +281,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/05/10/说明/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/16/初识js/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          说明
+          初识js
         
       </div>
     </a>
   
   
-    <a href="/2017/10/30/HTML标签简介/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML标签简介</div>
+    <a href="/2018/05/16/初识DOM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识DOM</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -377,7 +347,7 @@ var _hmt = _hmt || [];
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2017/10/30/CSS简介/",
+  id: "http://yoursite.com/2018/05/16/js类型判断/",
   owner: 'zhangjunkunn',
   repo: 'zhangjunkunn.github.io',
   oauth: {
