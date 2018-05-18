@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: css | Root的博客</title>
+  <title>滚动加载优化 | Root的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人记录空间">
-<meta name="keywords" content="前端,jquery,css,html,html5,css3,js">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Root的博客">
-<meta property="og:url" content="http://yoursite.com/tags/css/index.html">
+  <meta name="description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。  优化分析 既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量 对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。图片懒">
+<meta name="keywords" content="功能,优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="滚动加载优化">
+<meta property="og:url" content="http://yoursite.com/2018/05/16/滚动加载优化/index.html">
 <meta property="og:site_name" content="Root的博客">
-<meta property="og:description" content="个人记录空间">
+<meta property="og:description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。  优化分析 既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量 对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。图片懒">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/滚动加载优化/图片懒加载.gif">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/滚动加载优化/使用懒加载.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/滚动加载优化/不使用懒加载.png">
+<meta property="og:updated_time" content="2018-05-18T10:04:36.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Root的博客">
-<meta name="twitter:description" content="个人记录空间">
+<meta name="twitter:title" content="滚动加载优化">
+<meta name="twitter:description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。  优化分析 既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量 对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。图片懒">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/16/滚动加载优化/图片懒加载.gif">
   
     <link rel="alternative" href="/atom.xml" title="Root的博客" type="application/atom+xml">
   
@@ -168,158 +173,197 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-滚动加载优化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/16/盒模型与布局-盒模型篇/" class="archive-article-date">
-  	<time datetime="2018-05-16T03:58:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/盒模型与布局-盒模型篇/">盒模型与布局--盒模型篇</a>
+    <h1 class="article-title" itemprop="name">
+      滚动加载优化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/16/滚动加载优化/" class="archive-article-date">
+  	<time datetime="2018-05-16T07:50:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="优化原因"><a href="#优化原因" class="headerlink" title="优化原因"></a>优化原因</h2><p>接上一篇<a href="/2018/05/14/移动端滚动加载">滚动加载</a>留的问题。</p>
+<ol>
+<li>当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。</li>
+<li>如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。</li>
+</ol>
+<h2 id="优化分析"><a href="#优化分析" class="headerlink" title="优化分析"></a>优化分析</h2><ol>
+<li>既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量</li>
+<li>对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3>先来看一个效果，图片比较大，网络不是很好，所以效果比较明显。。。,同时首屏的图片也没有加载。</li>
+</ol>
+<p><img src="图片懒加载.gif" alt="图片懒加载"></p>
+<p>在图片还未加载时，先用本地图片占位，页面滚动时，判断图片是否到了<code>可见区域</code>，若是，则加载图片同时标记图片已被加载，算了，还是先不说这些，一步步来，首先为什么需要懒加载，懒加载真的有用吗？<br>让我们来看看两张图：</p>
+<p>使用图片懒加载：<br><img src="使用懒加载.png" alt="使用懒加载网络请求"> </p>
+<p>不使用图片懒加载：<br><img src="不使用懒加载.png" alt="不使用懒加载网络请求"></p>
+<p>若不使用懒加载，那么同一时间有多少新增图片就发送多少新增请求，而浏览器对于同一个域有并发限制(一般4-8个)，同时服务器为稳定性也对客户端并发数做了限制，如果图片是单独域名下存储还好，但如果是主域名下的静态图片呢？（虽然很少这么干）结果就是在css中使用到的背景图片加载会阻塞其他资源的下载。图片放在单独的域名下不存在阻塞静态资源的问题，但是不能保证用户完整浏览页面的情况下就加载出大量图片，是对带宽的过度占用。<br>总结起来主要就是节省网络带宽，同时避免阻塞时间过长。</p>
+<p>了解懒加载的目的后就是怎么落实代码了。当然，还是要先分析一波。</p>
+<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p>懒加载，直白点就是图片出现在我们定义的可视区域后再加载，在可视区域外的话就是用占位图展示</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">功能</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/16/滚动加载优化/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/16/初识js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识js</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/30/CSS简介/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/30/CSS简介/">CSS简介</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/30/关于前端/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:27:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/30/关于前端/">关于前端</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'your_disqus_short_name'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
   
 
-    
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/05/16/滚动加载优化/",
+  owner: 'zhangjunkunn',
+  repo: 'zhangjunkunn.github.io',
+  oauth: {
+    client_id: '01c11b4ccaa38b8f7de5',
+    client_secret: '24e3a83b1005a3eaba5a1965a5a2bb24346357b9',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -343,9 +387,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

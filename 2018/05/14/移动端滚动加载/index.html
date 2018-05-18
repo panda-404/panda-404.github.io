@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>移动端滚动加载 | Root的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开头最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点首先分析一下实现这个效果需要做些什么：  布局上：导航吸底再就是滚动区域 滚动功能：根据滚动距离执行加载逻辑下面就这两个方向实现我们的功能。">
-<meta name="keywords" content="功能">
+  <meta name="description" content="开头最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点 首先分析一下实现这个效果需要做些什么：  布局上：导航吸底再就是滚动区域 滚动功能：根据滚动距离执行加载逻辑下面就这两个方向实现我们的功能。">
+<meta name="keywords" content="功能,优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端滚动加载">
 <meta property="og:url" content="http://yoursite.com/2018/05/14/移动端滚动加载/index.html">
 <meta property="og:site_name" content="Root的博客">
-<meta property="og:description" content="开头最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点首先分析一下实现这个效果需要做些什么：  布局上：导航吸底再就是滚动区域 滚动功能：根据滚动距离执行加载逻辑下面就这两个方向实现我们的功能。">
+<meta property="og:description" content="开头最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点 首先分析一下实现这个效果需要做些什么：  布局上：导航吸底再就是滚动区域 滚动功能：根据滚动距离执行加载逻辑下面就这两个方向实现我们的功能。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/14/移动端滚动加载/滚动加载.gif">
 <meta property="og:image" content="http://yoursite.com/2018/05/14/移动端滚动加载/弹性滚动.gif">
 <meta property="og:image" content="http://yoursite.com/2018/05/14/移动端滚动加载/最终效果.gif">
-<meta property="og:updated_time" content="2018-05-16T03:39:24.959Z">
+<meta property="og:updated_time" content="2018-05-16T07:52:36.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端滚动加载">
-<meta name="twitter:description" content="开头最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点首先分析一下实现这个效果需要做些什么：  布局上：导航吸底再就是滚动区域 滚动功能：根据滚动距离执行加载逻辑下面就这两个方向实现我们的功能。">
+<meta name="twitter:description" content="开头最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点 首先分析一下实现这个效果需要做些什么：  布局上：导航吸底再就是滚动区域 滚动功能：根据滚动距离执行加载逻辑下面就这两个方向实现我们的功能。">
 <meta name="twitter:image" content="http://yoursite.com/2018/05/14/移动端滚动加载/滚动加载.gif">
   
     <link rel="alternative" href="/atom.xml" title="Root的博客" type="application/atom+xml">
@@ -193,7 +193,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点<br><img src="滚动加载.gif" alt="滚动效果"><br>首先分析一下实现这个效果需要做些什么：</p>
+        <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点<br><img src="滚动加载.gif" alt="滚动效果"></p>
+<p>首先分析一下实现这个效果需要做些什么：</p>
 <ol>
 <li>布局上：导航吸底再就是滚动区域</li>
 <li>滚动功能：根据滚动距离执行加载逻辑<br>下面就这两个方向实现我们的功能。<a id="more"></a>
@@ -224,6 +225,7 @@ var _hmt = _hmt || [];
 <p>模拟加载函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">loading() &#123;</span><br><span class="line">  <span class="keyword">let</span> _this = <span class="keyword">this</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.isLoading || <span class="keyword">this</span>.loaded) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'is loading'</span>)</span><br><span class="line">  <span class="keyword">this</span>.isLoading = <span class="literal">true</span></span><br><span class="line">  <span class="keyword">this</span>.startNum ++</span><br><span class="line">  <span class="keyword">let</span> timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> tempArr = _this.genData()</span><br><span class="line">    _this.testData = _this.testData.concat(tempArr)</span><br><span class="line">    clearTimeout(timer)</span><br><span class="line">    timer = <span class="literal">null</span></span><br><span class="line">    _this.isLoading = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">if</span>(_this.startNum == <span class="number">5</span>) &#123;</span><br><span class="line">      _this.loaded = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'loaded'</span>)</span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>指令通过mixins混合<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; debounce, throttle &#125; <span class="keyword">from</span> <span class="string">'./tools'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> loadMore = &#123;</span><br><span class="line">    directives: &#123;</span><br><span class="line">        <span class="string">'load-more'</span>: &#123;</span><br><span class="line">            inserted(el, binding) &#123;</span><br><span class="line">                <span class="keyword">let</span> elHeight = el.clientHeight</span><br><span class="line">                <span class="keyword">let</span> elInnerHTML = el.innerHTML</span><br><span class="line">                <span class="keyword">let</span> fn = binding.value</span><br><span class="line">                <span class="keyword">let</span> elScrollHeight</span><br><span class="line">                <span class="keyword">let</span> elScrollTop</span><br><span class="line">                <span class="keyword">let</span> checkScroll</span><br><span class="line">                <span class="keyword">let</span> callback</span><br><span class="line"></span><br><span class="line">                checkScroll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    elScrollTop = el.scrollTop</span><br><span class="line">                    elScrollHeight = el.scrollHeight</span><br><span class="line">                    <span class="keyword">return</span> elScrollHeight - elHeight - elScrollTop &lt;= <span class="number">100</span></span><br><span class="line">                &#125;</span><br><span class="line">                callback = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (checkScroll()) &#123;</span><br><span class="line">                        fn()</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                el.addEventListener(<span class="string">'touchmove'</span>, throttle(callback, <span class="number">300</span>), <span class="literal">false</span>)</span><br><span class="line">                el.addEventListener(<span class="string">'scroll'</span>, throttle(callback, <span class="number">200</span>), <span class="literal">false</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="最终效果.gif" alt="最终效果"></p>
+<p>效果是有了，并且表现正常，但是想想，当列表很长的时候，页面中新增大量DOM和图片加载的时候滚动时卡顿就会比较明显了，那怎么优化呢？这就是下一篇的内容了。</p>
 
       
 
@@ -238,6 +240,10 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">功能</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
         		</li>
       		
 		</ul>
@@ -507,11 +513,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color3">功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +537,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">功能</a>
+                <a href="javascript:void(0)" class="js-tag color4">基础'</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>

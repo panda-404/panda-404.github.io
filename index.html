@@ -170,6 +170,95 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-滚动加载优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/滚动加载优化/">滚动加载优化</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/16/滚动加载优化/" class="archive-article-date">
+  	<time datetime="2018-05-16T07:50:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="优化原因"><a href="#优化原因" class="headerlink" title="优化原因"></a>优化原因</h2><p>接上一篇<a href="/2018/05/14/移动端滚动加载">滚动加载</a>留的问题。</p>
+<ol>
+<li>当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。</li>
+<li>如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。</li>
+</ol>
+<h2 id="优化分析"><a href="#优化分析" class="headerlink" title="优化分析"></a>优化分析</h2><ol>
+<li>既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量</li>
+<li>对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3>先来看一个效果，图片比较大，网络不是很好，所以效果比较明显。。。,同时首屏的图片也没有加载。</li>
+</ol>
+<p><img src="图片懒加载.gif" alt="图片懒加载"></p>
+<p>在图片还未加载时，先用本地图片占位，页面滚动时，判断图片是否到了<code>可见区域</code>，若是，则加载图片同时标记图片已被加载，算了，还是先不说这些，一步步来，首先为什么需要懒加载，懒加载真的有用吗？<br>让我们来看看两张图：</p>
+<p>使用图片懒加载：<br><img src="使用懒加载.png" alt="使用懒加载网络请求"> </p>
+<p>不使用图片懒加载：<br><img src="不使用懒加载.png" alt="不使用懒加载网络请求"></p>
+<p>若不使用懒加载，那么同一时间有多少新增图片就发送多少新增请求，而浏览器对于同一个域有并发限制(一般4-8个)，同时服务器为稳定性也对客户端并发数做了限制，如果图片是单独域名下存储还好，但如果是主域名下的静态图片呢？（虽然很少这么干）结果就是在css中使用到的背景图片加载会阻塞其他资源的下载。图片放在单独的域名下不存在阻塞静态资源的问题，但是不能保证用户完整浏览页面的情况下就加载出大量图片，是对带宽的过度占用。<br>总结起来主要就是节省网络带宽，同时避免阻塞时间过长。</p>
+<p>了解懒加载的目的后就是怎么落实代码了。当然，还是要先分析一波。</p>
+<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p>懒加载，直白点就是图片出现在我们定义的可视区域后再加载，在可视区域外的话就是用占位图展示</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">功能</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-初识js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -201,6 +290,21 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -262,6 +366,21 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -402,6 +521,25 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -452,7 +590,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点<br><img src="滚动加载.gif" alt="滚动效果"><br>首先分析一下实现这个效果需要做些什么：</p>
+        <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点<br><img src="滚动加载.gif" alt="滚动效果"></p>
+<p>首先分析一下实现这个效果需要做些什么：</p>
 <ol>
 <li>布局上：导航吸底再就是滚动区域</li>
 <li>滚动功能：根据滚动距离执行加载逻辑<br>下面就这两个方向实现我们的功能。
@@ -472,6 +611,10 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">功能</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
         		</li>
       		
 		</ul>
@@ -760,11 +903,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
@@ -911,11 +1054,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color3">功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -927,11 +1078,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">功能</a>
+                <a href="javascript:void(0)" class="js-tag color4">基础'</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>
