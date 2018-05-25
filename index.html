@@ -170,6 +170,82 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据结构与算法js描述总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/数据结构与算法js描述总结/">数据结构与算法js描述总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/数据结构与算法js描述总结/" class="archive-article-date">
+  	<time datetime="2018-05-21T06:33:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这篇作用是记录《数据结构与算法javascript描述》一书中的知识点和练习题<br>
+        
+          <a class="article-more-a" href="/2018/05/21/数据结构与算法js描述总结/#more">阅读全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-滚动加载优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -195,18 +271,9 @@ var _hmt = _hmt || [];
 <li>当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。</li>
 <li>如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。</li>
 </ol>
-<h2 id="优化分析"><a href="#优化分析" class="headerlink" title="优化分析"></a>优化分析</h2><ol>
-<li>既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量</li>
-<li>对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3>先来看一个效果，图片比较大，网络不是很好，所以效果比较明显。。。,同时首屏的图片也没有加载。</li>
-</ol>
-<p><img src="图片懒加载.gif" alt="图片懒加载"></p>
-<p>在图片还未加载时，先用本地图片占位，页面滚动时，判断图片是否到了<code>可见区域</code>，若是，则加载图片同时标记图片已被加载，算了，还是先不说这些，一步步来，首先为什么需要懒加载，懒加载真的有用吗？<br>让我们来看看两张图：</p>
-<p>使用图片懒加载：<br><img src="使用懒加载.png" alt="使用懒加载网络请求"> </p>
-<p>不使用图片懒加载：<br><img src="不使用懒加载.png" alt="不使用懒加载网络请求"></p>
-<p>若不使用懒加载，那么同一时间有多少新增图片就发送多少新增请求，而浏览器对于同一个域有并发限制(一般4-8个)，同时服务器为稳定性也对客户端并发数做了限制，如果图片是单独域名下存储还好，但如果是主域名下的静态图片呢？（虽然很少这么干）结果就是在css中使用到的背景图片加载会阻塞其他资源的下载。图片放在单独的域名下不存在阻塞静态资源的问题，但是不能保证用户完整浏览页面的情况下就加载出大量图片，是对带宽的过度占用。<br>总结起来主要就是节省网络带宽，同时避免阻塞时间过长。</p>
-<p>了解懒加载的目的后就是怎么落实代码了。当然，还是要先分析一波。</p>
-<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p>懒加载，直白点就是图片出现在我们定义的可视区域后再加载，在可视区域外的话就是用占位图展示</p>
-
+        
+          <a class="article-more-a" href="/2018/05/16/滚动加载优化/#more">阅读全文 >></a>
+        
       
 
       
@@ -447,11 +514,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
         		</li>
       		
 		</ul>
@@ -530,11 +597,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
         		</li>
       		
 		</ul>
@@ -865,84 +932,10 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-关于前端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/30/关于前端/">关于前端</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/30/关于前端/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:27:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-名词解释"><a href="#1-名词解释" class="headerlink" title="1.名词解释"></a>1.名词解释</h2><p><strong>w3c</strong>: 万维网联盟组织，定制web标准的机构</p>
-<p><strong>SGML</strong>: Stantard Generalized Markup Language标准通用标记语言，定义电子文档结构及描述其内容的语言，是所有电子文档标记语言的起源。</p>
-<p><strong>HTML</strong>: Hypertext Markup language超文本标记语言，采用超链接的方法将不同文档信息组织在一起，显示信息，描述文档语义的语言，语法松散不严格<br>
-        
-          <a class="article-more-a" href="/2017/10/30/关于前端/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1054,14 +1047,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">功能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
@@ -1070,11 +1055,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DOM</a>
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1082,11 +1071,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">基础'</a>
+                <a href="javascript:void(0)" class="js-tag color4">DOM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
               </li>
             
             <div class="clearfix"></div>

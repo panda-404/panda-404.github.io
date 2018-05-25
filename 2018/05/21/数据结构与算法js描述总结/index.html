@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Root的博客</title>
+  <title>数据结构与算法js描述总结 | Root的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人记录空间">
-<meta name="keywords" content="前端,jquery,css,html,html5,css3,js">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Root的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="这篇作用是记录《数据结构与算法javascript描述》一书中的知识点和练习题">
+<meta name="keywords" content="数据结构与算法,读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法js描述总结">
+<meta property="og:url" content="http://yoursite.com/2018/05/21/数据结构与算法js描述总结/index.html">
 <meta property="og:site_name" content="Root的博客">
-<meta property="og:description" content="个人记录空间">
+<meta property="og:description" content="这篇作用是记录《数据结构与算法javascript描述》一书中的知识点和练习题">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/05/21/数据结构与算法js描述总结/列表抽象数据类型定义.png">
+<meta property="og:updated_time" content="2018-05-25T09:39:13.466Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Root的博客">
-<meta name="twitter:description" content="个人记录空间">
+<meta name="twitter:title" content="数据结构与算法js描述总结">
+<meta name="twitter:description" content="这篇作用是记录《数据结构与算法javascript描述》一书中的知识点和练习题">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/21/数据结构与算法js描述总结/列表抽象数据类型定义.png">
   
     <link rel="alternative" href="/atom.xml" title="Root的博客" type="application/atom+xml">
   
@@ -168,140 +171,257 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数据结构与算法js描述总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法js描述总结
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/数据结构与算法js描述总结/" class="archive-article-date">
+  	<time datetime="2018-05-21T06:33:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这篇作用是记录《数据结构与算法javascript描述》一书中的知识点和练习题<br><a id="more"></a></p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组定义是存储元素的线性集合，通过索引（元素地址的偏移量）存取元素</p>
+<h4 id="存取函数"><a href="#存取函数" class="headerlink" title="存取函数"></a>存取函数</h4><ul>
+<li><p>查找元素</p>
+<p>indexOf()返回参数在数组中的第一个索引</p>
+<p>lastIndexOf()返回参数在数组中的最后一个索引</p>
+</li>
+<li><p>数组字符串形式展示</p>
+<p>join()将数组按指定字符连接成字符串</p>
+<p>toString()以字符串形式显示数组</p>
+</li>
+<li><p>由已有数组创建新数组<br>concat()合并两个数组</p>
+<p>splice()提取一个数组的子集</p>
+</li>
+</ul>
+<h4 id="可变函数"><a href="#可变函数" class="headerlink" title="可变函数"></a>可变函数</h4><p>不引用数组中元素就可改变数组内容。</p>
+<ul>
+<li><p>为数组添加元素</p>
+<p>push()添加元素到数组末尾</p>
+<p>unshift()添加元素到数组开头</p>
+</li>
+<li><p>从数组中删除元素</p>
+<p>pop()删除数组末尾元素</p>
+<p>shift()删除数组第一个元素</p>
+</li>
+<li><p>从数组中间位置添加和删除元素</p>
+<p>splice()</p>
+</li>
+<li><p>为数组排序</p>
+<p>reverse() 逆序 降序</p>
+<p>sort() 升序</p>
+<blockquote>
+<p>排序时会调用数组元素的toString方法</p>
+</blockquote>
+<h4 id="迭代器方法"><a href="#迭代器方法" class="headerlink" title="迭代器方法"></a>迭代器方法</h4><p>为数组中每一个元素执行操作</p>
+</li>
+</ul>
+<ol>
+<li>不生成新数组</li>
+</ol>
+<ul>
+<li>forEach</li>
+<li>every</li>
+<li>some</li>
+<li>reduce</li>
+</ul>
+<ol start="2">
+<li>生成新数组</li>
+</ol>
+<ul>
+<li>map</li>
+<li>filter<blockquote>
+<p><a href="https://github.com/zhangjunkunn/data-structures/blob/master/%E6%95%B0%E7%BB%84/index.js" target="_blank" rel="noopener">数组练习题</a></p>
+</blockquote>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h4 id="1-列表抽象数据类型定义（ADT）"><a href="#1-列表抽象数据类型定义（ADT）" class="headerlink" title="1. 列表抽象数据类型定义（ADT）"></a>1. 列表抽象数据类型定义（ADT）</h4>列表是一组有序的数据，适用于不需要排序，不是很长的序列。内部使用<code>listSize</code>保存列表元素个数、<code>append</code>在末尾添加元素、<code>insert</code>插入元素、<code>getElement</code>显示当前所在位置的元素，并封装了一系列迭代器方法如下图：<br><img src="列表抽象数据类型定义.png" alt="列表抽象数据类型定义"></li>
+</ul>
+<p>使用<code>pos</code>表示列表当前位置，通过改变这个属性读取列表中不同位置处的值。<br>列表定义的迭代器方法：<code>front end prev next currPos</code>，通过这些方法，可以不关心列表底层的数据存储结构对列表进行遍历，迭代器对访问提供了统一的方式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(list.front(); list.currPos() &lt; list.length(); list.next()) &#123;</span><br><span class="line">  print(list.getElement());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>列表<a href="https://github.com/zhangjunkunn/data-structures/blob/master/%E5%88%97%E8%A1%A8/structor.js" target="_blank" rel="noopener">定义</a>及<a href="https://github.com/zhangjunkunn/data-structures/blob/master/%E5%88%97%E8%A1%A8/index.js" target="_blank" rel="noopener">练习题</a></p>
+</blockquote>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是和列表类似的数据结构，区别是栈只允许在列表一端即栈顶添加或删除数据，栈是后入先出(LIFO last-in-first-out)的数据结构。js数组提供了模拟栈操作的方法<code>pop</code>和<code>push</code>。</p>
+<ol>
+<li>栈操作</li>
+</ol>
+<ul>
+<li>入栈<code>push</code></li>
+<li>出栈<code>pop</code></li>
+<li><code>peek</code>展示栈顶元素</li>
+<li>使用<code>top</code>属性记录当前栈顶位置</li>
+<li><code>clear</code>清空栈，方式比较简单粗暴，将<code>top</code>设为0</li>
+</ul>
+<p>栈这种先入后出的特性有比较多的应用: 进制转换、判断回文、递归、转换表达式、表达式中括号匹配等。这些还仅仅是书中粗浅的介绍。</p>
+<blockquote>
+<p>栈<a href="https://github.com/zhangjunkunn/data-structures/blob/master/%E6%A0%88/structor.js" target="_blank" rel="noopener">定义</a>及<a href="https://github.com/zhangjunkunn/data-structures/blob/master/%E6%A0%88/index.js" target="_blank" rel="noopener">练习题</a></p>
+</blockquote>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列也是一种列表，与栈的区别是只能从一端（队尾）插入元素，从另一端（队首）删除元素。适用于存储有顺序排列的数据，先进先出（First-In-First-Out, FIFO）<br>队列实现和栈差不多，区别是一头进一头出。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/30/CSS简介/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/30/CSS简介/">CSS简介</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/30/HTML标签简介/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:30:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/30/HTML标签简介/">HTML标签简介</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/30/关于前端/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:27:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/30/关于前端/">关于前端</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/21/数据结构与算法js描述总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/05/16/滚动加载优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">滚动加载优化</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'your_disqus_short_name'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/05/21/数据结构与算法js描述总结/",
+  owner: 'zhangjunkunn',
+  repo: 'zhangjunkunn.github.io',
+  oauth: {
+    client_id: '01c11b4ccaa38b8f7de5',
+    client_secret: '24e3a83b1005a3eaba5a1965a5a2bb24346357b9',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -325,8 +445,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

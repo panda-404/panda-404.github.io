@@ -8,21 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>滚动加载优化 | Root的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。  优化分析 既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量 对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。图片懒">
+  <meta name="description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。">
 <meta name="keywords" content="功能,优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="滚动加载优化">
 <meta property="og:url" content="http://yoursite.com/2018/05/16/滚动加载优化/index.html">
 <meta property="og:site_name" content="Root的博客">
-<meta property="og:description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。  优化分析 既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量 对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。图片懒">
+<meta property="og:description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/16/滚动加载优化/图片懒加载.gif">
 <meta property="og:image" content="http://yoursite.com/2018/05/16/滚动加载优化/使用懒加载.png">
 <meta property="og:image" content="http://yoursite.com/2018/05/16/滚动加载优化/不使用懒加载.png">
-<meta property="og:updated_time" content="2018-05-18T10:04:36.282Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/滚动加载优化/视口模型.png">
+<meta property="og:updated_time" content="2018-05-21T06:24:12.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="滚动加载优化">
-<meta name="twitter:description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。  优化分析 既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量 对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。图片懒">
+<meta name="twitter:description" content="优化原因接上一篇滚动加载留的问题。  当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。 如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。">
 <meta name="twitter:image" content="http://yoursite.com/2018/05/16/滚动加载优化/图片懒加载.gif">
   
     <link rel="alternative" href="/atom.xml" title="Root的博客" type="application/atom+xml">
@@ -198,6 +199,7 @@ var _hmt = _hmt || [];
 <li>当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。</li>
 <li>如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。</li>
 </ol>
+<a id="more"></a>
 <h2 id="优化分析"><a href="#优化分析" class="headerlink" title="优化分析"></a>优化分析</h2><ol>
 <li>既然是因为DOM过多造成的影响，那么解决的目的就明晰了，减少DOM数量</li>
 <li>对于图片，除了减少页面中的DOM结构以外，还需要针对图片的加载做优化，常见的就是图片懒加载。<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3>先来看一个效果，图片比较大，网络不是很好，所以效果比较明显。。。,同时首屏的图片也没有加载。</li>
@@ -208,7 +210,29 @@ var _hmt = _hmt || [];
 <p>不使用图片懒加载：<br><img src="不使用懒加载.png" alt="不使用懒加载网络请求"></p>
 <p>若不使用懒加载，那么同一时间有多少新增图片就发送多少新增请求，而浏览器对于同一个域有并发限制(一般4-8个)，同时服务器为稳定性也对客户端并发数做了限制，如果图片是单独域名下存储还好，但如果是主域名下的静态图片呢？（虽然很少这么干）结果就是在css中使用到的背景图片加载会阻塞其他资源的下载。图片放在单独的域名下不存在阻塞静态资源的问题，但是不能保证用户完整浏览页面的情况下就加载出大量图片，是对带宽的过度占用。<br>总结起来主要就是节省网络带宽，同时避免阻塞时间过长。</p>
 <p>了解懒加载的目的后就是怎么落实代码了。当然，还是要先分析一波。</p>
-<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p>懒加载，直白点就是图片出现在我们定义的可视区域后再加载，在可视区域外的话就是用占位图展示</p>
+<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p>懒加载，直白点就是图片出现在我们定义的“可视区域”后再加载，在可视区域外的话就是用占位图先占位不加载图片。从代码上来看，需要在滚动时判断图片当前位置是否出现在“可视区域”了，如果出现了，则用<code>Image</code>对象加载图片，在<code>onload</code>事件中再用真实的图片<code>src</code>替换占位图，因为是用<code>Image</code>对象加载完毕后替换，所以效果就是图片会直接展示而不会像网络条件不好时那样一点点刷出来，这样的话，图片会用到两个<code>src</code>一个是占位图，一个是真实的图片地址。真实图片的地址可以使用自定义属性<code>data-</code>存储。同时，已经加载过的图片不需要在滚动时判断是否出现在“可视区域”，可以使用属性来标记图片，这里是<code>unload</code>属性。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>主要的两个函数：</p>
+<ul>
+<li>判断是否可见</li>
+<li>滚动时遍历元素并判断是否可见，是否需要加载图片。</li>
+</ul>
+<ol>
+<li>是否可见<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> clientHeight = <span class="built_in">document</span>.body.clientHeight</span><br><span class="line"><span class="keyword">let</span> th = <span class="number">300</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isVisible</span>(<span class="params">ele</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> pos = ele.getBoundingClientRect()</span><br><span class="line">  <span class="keyword">if</span> (pos.bottom &gt;= -th &amp;&amp; pos.top &lt;= clientHeight + th) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>为了直观，这里给出一张图：<br><img src="视口模型.png" alt="视口模型"></p>
+<p><code>viewport</code>是body的高度一般是我们浏览器视窗。 <code>getBoundingClientRect</code>得到的是相对<code>viewport</code>的位置数值，在视窗之上数值为负。<code>th</code>是浮动范围，最终定义的可视区域范围就是图中红色区域。</p>
+<ol start="2">
+<li>懒加载图片<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> domCache = el.querySelectorAll(<span class="string">'.lazy-load[unload]'</span>)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lazyLoad</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  domCache.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">ele</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (!isVisible(ele) || !ele.getAttribute(<span class="string">'unload'</span>)) <span class="keyword">return</span>;</span><br><span class="line">      ele.removeAttribute(<span class="string">'unload'</span>)</span><br><span class="line">      <span class="keyword">let</span> src = ele.dataset.src</span><br><span class="line">      <span class="keyword">let</span> img = <span class="keyword">new</span> Image()</span><br><span class="line">      img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          ele.src = img.src</span><br><span class="line">      &#125;</span><br><span class="line">      img.src = src</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中<code>.lazy-load</code>是图片，<code>unload</code>属性标识图片是否加载过，这里有一处地方需要注意下，<code>if (!isVisible(ele) || !ele.getAttribute(&#39;unload&#39;)) return;</code>，为什么这么在<code>let domCache = el.querySelectorAll(&#39;.lazy-load[unload]&#39;)</code>这个前提下还这么写，主要是因为整体代码是在自定义指令的<code>componentUpdated</code>钩子中编写的，这个钩子会在绑定的元素<strong>发生更新</strong>（这里就是增加img元素）的时候调用，意味着<code>domCache</code>只会在<code>componentUpdated</code>的时候更新一次，如果不加<code>!ele.getAttribute(&#39;unload&#39;)</code>则加载过的图片还会再次加载（因为domCache不是最新的）</p>
+<blockquote>
+<p>ps: 发现语言描述好苍白啊！！</p>
+</blockquote>
+<p>给出<code>componentUpdated</code>中完整的代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">componentUpdated(el, binding) &#123;</span><br><span class="line">    <span class="keyword">if</span>(!binding.modifiers.lazy) &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> clientHeight = <span class="built_in">document</span>.body.clientHeight</span><br><span class="line">    <span class="keyword">let</span> th = <span class="number">300</span></span><br><span class="line">    <span class="keyword">let</span> domCache = el.querySelectorAll(<span class="string">'.lazy-load[unload="true"]'</span>)</span><br><span class="line">    <span class="keyword">let</span> isVisible</span><br><span class="line">    <span class="keyword">let</span> lazyLoad</span><br><span class="line">    isVisible = <span class="function"><span class="keyword">function</span>(<span class="params">ele</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> pos = ele.getBoundingClientRect()</span><br><span class="line">        <span class="keyword">if</span> (pos.bottom &gt;= -th &amp;&amp; pos.top &lt;= clientHeight + th) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    lazyLoad = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        domCache.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">ele</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!isVisible(ele) || !ele.getAttribute(<span class="string">'unload'</span>)) <span class="keyword">return</span>;</span><br><span class="line">            ele.removeAttribute(<span class="string">'unload'</span>)</span><br><span class="line">            <span class="keyword">let</span> src = ele.dataset.src</span><br><span class="line">            <span class="keyword">let</span> img = <span class="keyword">new</span> Image()</span><br><span class="line">            img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                ele.src = img.src</span><br><span class="line">            &#125;</span><br><span class="line">            img.src = src</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    el.onscroll = <span class="literal">null</span></span><br><span class="line">    el.onscroll = throttle(lazyLoad, <span class="number">400</span>)</span><br><span class="line">    lazyLoad()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>throttle</code>函数就不再给了，<code>binding.modifiers.lazy</code>是表示是否使用懒加载，以<code>v-load-more.lazy</code>形式使用。需要注意的是<code>componentUpdated</code>更新时调用，所以不将之前绑定的事件解除的话，元素上会绑定大量事件，至于为什么选择<code>onscroll</code>方式绑定，因为这样解绑方便啊。其实还是因为<code>componentUpdated</code>的原因，每次更新都会调用，而throttle函数返回的都是不同的函数。如果非要使用<code>addEventListener</code>，可以在throttle中使用单例模式或者在指令所在js文件中给函数初始化。这里不再示范了，按简单的来。</p>
+<p>最后是页面html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test-content"</span> <span class="attr">v-load-more.lazy</span>=<span class="string">"loadImg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex-wrap"</span> <span class="attr">ref</span>=<span class="string">"flexWrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img-item"</span> <span class="attr">v-for</span>=<span class="string">"item in testData"</span> <span class="attr">:key</span>=<span class="string">"item.name"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy-load"</span> <span class="attr">src</span>=<span class="string">"../../static/defalut.jpg"</span> <span class="attr">:data-src</span>=<span class="string">"item.url"</span> <span class="attr">unload</span>=<span class="string">"true"</span> <span class="attr">alt</span>=<span class="string">"图片"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"no-more-content"</span> <span class="attr">v-if</span>=<span class="string">"loaded"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"no-more-dec"</span>&gt;</span>没有更多内容了<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -295,6 +319,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/05/21/数据结构与算法js描述总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构与算法js描述总结
+        
+      </div>
+    </a>
   
   
     <a href="/2018/05/16/初识js/" id="article-nav-older" class="article-nav-link-wrap">
@@ -474,14 +507,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">功能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
@@ -490,11 +515,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DOM</a>
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">功能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,11 +531,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">基础'</a>
+                <a href="javascript:void(0)" class="js-tag color4">DOM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂项</a>
               </li>
             
             <div class="clearfix"></div>
