@@ -6,19 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Root的博客</title>
+  <title>项目记录 | Root的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人记录空间">
-<meta name="keywords" content="前端,jquery,css,html,html5,css3,js">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Root的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="本篇记录下最近一次项目的体会及遇到的一些问题。同样也是尝试培养记录的习惯，时常发现以前遇到过的问题、处理过的情况记不清楚，希望能通过博客尽可能的总结一点知识。">
+<meta name="keywords" content="项目记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目记录">
+<meta property="og:url" content="http://yoursite.com/2018/07/30/项目记录/index.html">
 <meta property="og:site_name" content="Root的博客">
-<meta property="og:description" content="个人记录空间">
+<meta property="og:description" content="本篇记录下最近一次项目的体会及遇到的一些问题。同样也是尝试培养记录的习惯，时常发现以前遇到过的问题、处理过的情况记不清楚，希望能通过博客尽可能的总结一点知识。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/07/30/项目记录/效果预览.gif">
+<meta property="og:image" content="http://yoursite.com/2018/07/30/项目记录/长按放大.gif">
+<meta property="og:image" content="http://yoursite.com/2018/07/30/项目记录/计算规则.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/30/项目记录/结果页.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/30/项目记录/不添加overflow.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/30/项目记录/添加overflow.png">
+<meta property="og:updated_time" content="2018-07-31T01:49:59.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Root的博客">
-<meta name="twitter:description" content="个人记录空间">
+<meta name="twitter:title" content="项目记录">
+<meta name="twitter:description" content="本篇记录下最近一次项目的体会及遇到的一些问题。同样也是尝试培养记录的习惯，时常发现以前遇到过的问题、处理过的情况记不清楚，希望能通过博客尽可能的总结一点知识。">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/30/项目记录/效果预览.gif">
   
     <link rel="alternative" href="/atom.xml" title="Root的博客" type="application/atom+xml">
   
@@ -168,16 +176,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-项目记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-项目记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/30/项目记录/">项目记录</a>
+    <h1 class="article-title" itemprop="name">
+      项目记录
     </h1>
   
 
@@ -190,10 +196,23 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇记录下最近一次项目的体会及遇到的一些问题。同样也是尝试培养记录的习惯，时常发现以前遇到过的问题、处理过的情况记不清楚，希望能通过博客尽可能的总结一点知识。<br>
-        
-          <a class="article-more-a" href="/2018/07/30/项目记录/#more">阅读全文 >></a>
-        
+        <p>本篇记录下最近一次项目的体会及遇到的一些问题。同样也是尝试培养记录的习惯，时常发现以前遇到过的问题、处理过的情况记不清楚，希望能通过博客尽可能的总结一点知识。<br><a id="more"></a><br>项目是一个H5的测试题页面，整体效果如下：<br><img src="效果预览.gif" alt="效果预览"><br>简介：这是产品推广使用的H5引导页面，根据所选选项生成结果，结果页是由测试题选项分布拼接的海报，做测试题的滚动效果使用插件<code>vue-awesome-swiper</code>，拼接海报使用了插件<code>html2canvas</code>，主要难点在结果页(其他页面暂未要求)要求一屏显示，而设计稿是针对iphone6等机型设计，会出现短屏手机超出一屏，长屏手机不足一屏大量空白的情况。</p>
+<p>整体使用<code>vue-cli</code>搭建，分为首页、做题、结果三个路由。因为在移动端触摸事件延迟，使用<code>fastclick</code>插件消除点击延迟，适配问题通过计算屏幕宽度与设计稿宽度比例作为根节点字体大小，使用rem简单适配。顺便一提，在微信浏览器中默认有长按呼出右键菜单(<code>contextmenu</code>)的功能，对我们没什么用，直接禁用。</p>
+<h2 id="入口页和做题页"><a href="#入口页和做题页" class="headerlink" title="入口页和做题页"></a>入口页和做题页</h2><p>首页没有办法严格要求一屏显示，同样因为设计稿图片尺寸问题，因此就直接宽高100%，background-size: contain;使图片完全显示。</p>
+<p>做题页面也没遇到什么问题，主要逻辑就是选择后跳到下一题同时记录题号和选项(暂未提供上一题功能)，选项有两种类型：文字和图片，包裹选项的容器则针对选项类型做不同布局。图片选项可以长按放大。</p>
+<p>这里讲一下长按放大的实现，长按通过在<a href="https://cn.vuejs.org/v2/guide/custom-directive.html" target="_blank" rel="noopener">自定义指令</a>中由touchstart和touchend，判断是否长按，我能想到的有两种思路，一是touchstart时记录起始时间，touchend用当前时间做差；二是touchstart设置定时器，定时器中改变一个开关变量的状态。touchend中检查开关状态，方法自由选择，项目中使用的定时器的方法。再提一下自定义指令传参，若需要传递多个参数或者参数不是简单类型时，最好通过对象的形式传递给binding.value，通过v-test:{a:1,b:2}=”demo”这种形式，binding.arg取得的是字符串形式的值。同时，在绑定指令时，分清楚指令多次绑定会不会对执行产生影响，比如这里，如果使用官方文档中说的绑定简写的形式，会在bind和update这两个钩子函数中执行同样的绑定函数，所以touchstart等事件会注册两次，这就对我们的逻辑造成了影响。一下是项目中使用的指令(其实这里写得乱，选项有点击和长按两种操作，我这里写一块儿了，可以再处理一下)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> longTouch = &#123;</span><br><span class="line">  directives: &#123;</span><br><span class="line">    <span class="string">'long-touch'</span>: &#123;</span><br><span class="line">      bind: <span class="function"><span class="keyword">function</span> (<span class="params">el, binding</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> timer = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">let</span> cb = binding.value.cb</span><br><span class="line">        <span class="keyword">let</span> args = binding.value.args</span><br><span class="line">        <span class="keyword">let</span> handle = <span class="literal">false</span></span><br><span class="line">        el.addEventListener(<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (e.touches.length &gt; <span class="number">1</span>) <span class="keyword">return</span></span><br><span class="line">          timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            handle = <span class="literal">true</span></span><br><span class="line">            cb(<span class="literal">true</span>, args)</span><br><span class="line">          &#125;, <span class="number">500</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        el.addEventListener(<span class="string">'touchmove'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">          clearTimeout(timer)</span><br><span class="line">          e.stopPropagation()</span><br><span class="line">          handle = <span class="literal">true</span></span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">        &#125;)</span><br><span class="line">        el.addEventListener(<span class="string">'touchend'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">          clearTimeout(timer)</span><br><span class="line">          <span class="keyword">if</span> (!handle) &#123;</span><br><span class="line">            cb(<span class="literal">false</span>, args)</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            handle = <span class="literal">false</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>函数中做了一定的处理，比如，e.touches这是一个记录屏幕中每个手指动作，在长按时如果屏幕中有多个手指事件则不触发，同样的，如果touchstart后有touchmove也不触发长按，handle用途是决定长按还是点击。长按效果：<br><img src="长按放大.gif" alt="长按效果"></p>
+<p>再就是计算测试结果的逻辑，拿到的计算规则固定，所以计算函数也比较固定:<br><img src="计算规则.png" alt="计算规则"></p>
+<p>这里题号和选项都不多，大体思路是统计五种测试结果对应选项出现的次数再取最高次数的结果，部分代码见下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> resultTypeArr = []</span><br><span class="line">resultTypeArr.push(&#123;</span><br><span class="line">  type: <span class="string">'A'</span>,</span><br><span class="line">  score: <span class="keyword">this</span>.checked.filter(<span class="function"><span class="params">check</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> fool = check.index + <span class="string">''</span> + check.order</span><br><span class="line">    <span class="keyword">switch</span>(fool) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'00'</span>: </span><br><span class="line">      <span class="keyword">case</span> <span class="string">'10'</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'20'</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'31'</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'41'</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'53'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;).length</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="测试结果页"><a href="#测试结果页" class="headerlink" title="测试结果页"></a>测试结果页</h2><p>测试题页得到的结果通过路由参数传递。结果页分两部分：取得参数后显示对应的结果图并生成二维码(结果图不包含二维码，考虑以后可能二维码会有运营方面的需求，没有写死)、将结果图和二维码定位好后用插件生成海报显示在一屏。<br><img src="结果页.png" alt="结果页"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"result-main"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"result-poster common-bg"</span> <span class="attr">ref</span>=<span class="string">"resultWrap"</span>&gt;</span> <span class="comment">&lt;!-- flex:1部分 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"resultPoster"</span>&gt;</span> <span class="comment">&lt;!-- html2canvas绘制容器 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"poster img-contain"</span> <span class="attr">:src</span>=<span class="string">"`/static/result$&#123;type&#125;_poster.png`"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">v-if</span>=<span class="string">"!posterDataUrl"</span> <span class="attr">ref</span>=<span class="string">"poster"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"qrcodeContent"</span> <span class="attr">:src</span>=<span class="string">"qrcodeUrl"</span> <span class="attr">v-if</span>=<span class="string">"!posterDataUrl"</span> <span class="attr">ref</span>=<span class="string">"qrcodecont"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">v-show</span>=<span class="string">"posterDataUrl"</span> <span class="attr">:src</span>=<span class="string">"posterDataUrl"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"posterImg"</span> <span class="attr">ref</span>=<span class="string">"finalImg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 15vh"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 底部按钮 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>最开始使用的方案是利用flex，底部两个按钮和文字提示的部分给高度，海报部分<code>flex:1</code>分配剩余高度,overflow:hidden(具体原理还不清楚，若不加此属性，flex:1的子元素高度超过父容器剩余高度后会挤压给定高度的子元素空间)<br>不添加overflow:<br><img src="不添加overflow.png" alt="不添加overflow"><br>添加overflow:<br><img src="添加overflow.png" alt="添加overflow"><br>接下来就该解决图片显示不全的情况了，一般来说可以通过<code>max-height:100%;max-width:100%</code>使图片自适应容器宽高缩放，但是html2canvas绘制的容器也设置了max-height(否则生成的图片会有空白)，因此对图片使用max-height会失效，我个人只有利用js计算，当图片超出容器高度后设置容器高度100%，解决父子容器同时高度自适应时图片超出容器。剩下就是处理二维码定位，通过计算设计稿和实际图片高度比例利用js实现。</p>
+</li>
+<li><p>第二个方案类似方案一，方案一是通过flex分配剩余高度，也可以按钮占据容器padding-bottom区域，海报区域height:100%;实现一屏显示，同样由于图片超出高度，需要js计算。</p>
+</li>
+</ul>
+<p>除此之外，html2canvas这个插件还有一点不理解的地方是，在相同html2canvas配置下，同一张图片作为背景图和以img标签引入，经canvas转成图片后清晰度有区别，背景图片时更模糊，大概是源码上的区别吧，还没深究这个问题。当背景图转为canvas模糊我尝试过调整canvas画布宽高与css宽高比例、放大canvas为待绘制容器两倍再缩小canvas、放大待绘制区域宽高为两倍等方法，但是都有大大小小的问题，最后偶然发现利用img标签莫名其妙清晰度就提升了。。。</p>
+
       
 
       
@@ -217,10 +236,73 @@ var _hmt = _hmt || [];
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/07/30/项目记录/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/21/数据结构与算法js描述总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法js描述总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -240,701 +322,46 @@ var _hmt = _hmt || [];
 
 
 
-
-  
-    <article id="post-数据结构与算法js描述总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/数据结构与算法js描述总结/">数据结构与算法js描述总结</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/21/数据结构与算法js描述总结/" class="archive-article-date">
-  	<time datetime="2018-05-21T06:33:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这篇作用是记录《数据结构与算法javascript描述》一书中的知识点和练习题<br>
-        
-          <a class="article-more-a" href="/2018/05/21/数据结构与算法js描述总结/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-滚动加载优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/滚动加载优化/">滚动加载优化</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/滚动加载优化/" class="archive-article-date">
-  	<time datetime="2018-05-16T07:50:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="优化原因"><a href="#优化原因" class="headerlink" title="优化原因"></a>优化原因</h2><p>接上一篇<a href="/2018/05/14/移动端滚动加载">滚动加载</a>留的问题。</p>
-<ol>
-<li>当列表过长，大量DOM存在于页面之中，当滚动发生时频繁重排造成页面卡顿。</li>
-<li>如果列表中每一条包含图片等外部资源，一是加载耗时，二是展示图片需要更多内存，列表过长时卡顿现象更加明显。</li>
-</ol>
-        
-          <a class="article-more-a" href="/2018/05/16/滚动加载优化/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">功能</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-初识js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/初识js/">初识js</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/初识js/" class="archive-article-date">
-  	<time datetime="2018-05-16T04:29:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="初识js"><a href="#初识js" class="headerlink" title="初识js"></a>初识js</h1><p>这是关于javascript的第一篇文章，还是得好好说说，之后的javascript相关部分就不再废话了，毕竟我是个追求简约的人(￣▽￣)／<br>记不得第一见识javascript是什么时候了，或许是看头条上文章中那些五颜六色的代码块的时候吧，不过那时候并不知道javascript是什么东东，毕竟我以为所有我用的东西都是纯java,c,c++实现的，而这三种语言是没有如此漂亮的代码的。。。后来javascript词频越来越高，也开始慢慢的对javascript有所了解。<br>
-        
-          <a class="article-more-a" href="/2018/05/16/初识js/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js类型判断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/js类型判断/">js类型判断</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/js类型判断/" class="archive-article-date">
-  	<time datetime="2018-05-16T04:24:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="js类型判断"><a href="#js类型判断" class="headerlink" title="js类型判断"></a>js类型判断</h1><p>今天才想起来漏写了类型检测，现在补上。。。<br>
-        
-          <a class="article-more-a" href="/2018/05/16/js类型判断/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-初识DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/初识DOM/">初识DOM</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/初识DOM/" class="archive-article-date">
-  	<time datetime="2018-05-16T04:18:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="初识DOM"><a href="#初识DOM" class="headerlink" title="初识DOM"></a>初识DOM</h1><p>前几篇简略的将js的知识复习了一遍，不过还有很多方法、函数式、ES5,6的新特性没概括，之后再补充吧。现在开始了解前端的另一个核心–DOM<br>
-        
-          <a class="article-more-a" href="/2018/05/16/初识DOM/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-盒模型与布局-盒模型篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/盒模型与布局-盒模型篇/">盒模型与布局--盒模型篇</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/盒模型与布局-盒模型篇/" class="archive-article-date">
-  	<time datetime="2018-05-16T03:58:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我发现一点一滴的记录似乎对我没有多大意义，莫不如直接看文档，所以索性挑些我遇到的一些重点谈谈。</p>
-<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>html中引入了一个形象的模型–盒模型，来描述html中的元素，不过在说盒模型前，得再次谈谈html中的三种元素类型：block,inline,inline-block。可通过<code>display</code>属性切换，该属性了解以下值：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: inline|block|inline-block|table|table-cell|grid|none|inherit;</span><br></pre></td></tr></table></figure>
-<h2 id="1-block"><a href="#1-block" class="headerlink" title="1. block"></a>1. block</h2><p>这是最灵活也是最常用的一种元素类型，典型代表<code>&lt;div&gt;</code>。特征：<br>
-        
-          <a class="article-more-a" href="/2018/05/16/盒模型与布局-盒模型篇/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DOM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端滚动加载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/14/移动端滚动加载/">移动端滚动加载</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/14/移动端滚动加载/" class="archive-article-date">
-  	<time datetime="2018-05-14T08:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>最近没什么事情，得以有空实现一个小功能。移动端滚动加载是比较常见的需求，类似这样，样式将就看看，不是重点<br><img src="滚动加载.gif" alt="滚动效果"></p>
-<p>首先分析一下实现这个效果需要做些什么：</p>
-<ol>
-<li>布局上：导航吸底再就是滚动区域</li>
-<li>滚动功能：根据滚动距离执行加载逻辑<br>下面就这两个方向实现我们的功能。
-        
-          <a class="article-more-a" href="/2018/05/14/移动端滚动加载/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">功能</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/10/说明/">说明</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/10/说明/" class="archive-article-date">
-  	<time datetime="2018-05-10T02:26:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="这是一篇说明"><a href="#这是一篇说明" class="headerlink" title="这是一篇说明"></a>这是一篇说明</h2><p>非常悲伤，以前写的博客没有及时备份，过年电脑出问题后就只剩下最初的三篇了。但是问题不大，以后多注意下备份，千万别再出问题了。<br>好在之前把博客离线了下来，但是离线也出了问题，最终还是只拯救回来四篇。。。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂项</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/30/CSS简介/">CSS简介</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/30/CSS简介/" class="archive-article-date">
-  	<time datetime="2017-10-30T12:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>CSS全称Cascading Style Sheet层叠样式表，它的提出是为了解决一开始HTML各种显示功能的发展导致了HTML页面混乱臃肿。CSS的作用是定义HTML等文件的样式，使样式和页面结构分离开，便于之后再次更改样式。就如同html文件是一个涂色本，你可以任意规定某个部分的颜色，页面的表现不在和页面结构相关。CSS的内容主要分为选择器和样式属性。<br>
-        
-          <a class="article-more-a" href="/2017/10/30/CSS简介/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'your_disqus_short_name'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/07/30/项目记录/",
+  owner: 'zhangjunkunn',
+  repo: 'zhangjunkunn.github.io',
+  oauth: {
+    client_id: '01c11b4ccaa38b8f7de5',
+    client_secret: '24e3a83b1005a3eaba5a1965a5a2bb24346357b9',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -958,8 +385,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
